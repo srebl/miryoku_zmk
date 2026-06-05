@@ -4,3 +4,133 @@
 #include "../miryoku/custom_config.h"
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
+
+/ {
+    macros {
+        uc_ae: uc_ae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp U>
+                , <&macro_release &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp N0 &kp N0 &kp E &kp N4 &kp SPC>
+                ;
+        };
+
+        uc_AE: uc_AE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp U>
+                , <&macro_release &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp N0 &kp N0 &kp C &kp N4 &kp SPC>
+                ;
+        };
+
+        uc_oe: uc_oe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp U>
+                , <&macro_release &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp N0 &kp N0 &kp F &kp N6 &kp SPC>
+                ;
+        };
+
+        uc_OE: uc_OE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp U>
+                , <&macro_release &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp N0 &kp N0 &kp D &kp N6 &kp SPC>
+                ;
+        };
+
+        uc_ue: uc_ue {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp U>
+                , <&macro_release &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp N0 &kp N0 &kp F &kp C &kp SPC>
+                ;
+        };
+
+        uc_UE: uc_UE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp U>
+                , <&macro_release &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp N0 &kp N0 &kp D &kp C &kp SPC>
+                ;
+        };
+
+        uc_ss: uc_ss {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp U>
+                , <&macro_release &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp N0 &kp N0 &kp D &kp F &kp SPC>
+                ;
+        };
+    };
+
+    behaviors {
+        de_ae: de_ae {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&uc_ae>, <&uc_AE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        de_oe: de_oe {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&uc_oe>, <&uc_OE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        de_ue: de_ue {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&uc_ue>, <&uc_UE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
+    keymap {
+        de_layer {
+            display-name = "DE";
+            bindings = <
+                &trans  &uc_AE  &trans  &trans  &trans  &trans      &trans  &uc_ue   &trans  &uc_oe   &trans  &trans
+                &trans  &uc_ae  &uc_ss  &trans  &trans  &trans      &trans  &uc_UE   &trans  &uc_OE   &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans   &trans  &trans   &trans  &trans
+                                &trans  &trans  &trans              &trans  &trans   &trans
+            >;
+        };
+    };
+};
