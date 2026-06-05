@@ -126,10 +126,10 @@
         de_layer {
             display-name = "DE";
             bindings = <
-                &trans  &uc_AE  &trans  &trans  &trans  &trans      &trans  &uc_ue   &trans  &uc_oe   &trans  &trans
-                &trans  &uc_ae  &uc_ss  &trans  &trans  &trans      &trans  &uc_UE   &trans  &uc_OE   &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans   &trans  &trans   &trans  &trans
-                                &trans  &trans  &trans              &trans  &trans   &trans
+                &trans  &uc_ae_upper  &trans  &trans  &trans  &trans      &trans  &uc_ue_lower  &trans  &uc_oe_lower  &trans  &trans
+                &trans  &uc_ae_lower  &uc_ss  &trans  &trans  &trans      &trans  &uc_ue_upper  &trans  &uc_oe_upper  &trans  &trans
+                &trans  &trans        &trans  &trans  &trans  &trans      &trans  &trans        &trans  &trans        &trans  &trans
+                                      &trans  &trans  &trans                      &trans        &trans  &trans
             >;
         };
     };

@@ -4,4 +4,4 @@
 #define MIRYOKU_ALPHAS_QWERTZ
 #define MIRYOKU_TAP_QWERTZ
 
-#define U_DE 10
+#define U_DE 9
