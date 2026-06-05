@@ -99,29 +99,6 @@
         };
     };
 
-    behaviors {
-        de_ae: de_ae {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&uc_ae>, <&uc_AE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        de_oe: de_oe {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&uc_oe>, <&uc_OE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        de_ue: de_ue {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&uc_ue>, <&uc_UE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-    };
-
     keymap {
         de_layer {
             display-name = "DE";
