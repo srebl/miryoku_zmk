@@ -1,112 +1,20 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
+#include <dt-bindings/zmk/keys_de.h>
 #include "../miryoku/custom_config.h"
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
 
 / {
-    macros {
-        uc_ae_lower: uc_ae_lower {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <0>;
-            wait-ms = <0>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp N0 &kp N0 &kp E &kp N4 &kp SPC>
-                ;
-        };
-
-        uc_ae_upper: uc_ae_upper {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <0>;
-            wait-ms = <0>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp N0 &kp N0 &kp C &kp N4 &kp SPC>
-                ;
-        };
-
-        uc_oe_lower: uc_oe_lower {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <0>;
-            wait-ms = <0>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp N0 &kp N0 &kp F &kp N6 &kp SPC>
-                ;
-        };
-
-        uc_oe_upper: uc_oe_upper {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <0>;
-            wait-ms = <0>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp N0 &kp N0 &kp D &kp N6 &kp SPC>
-                ;
-        };
-
-        uc_ue_lower: uc_ue_lower {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <0>;
-            wait-ms = <0>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp N0 &kp N0 &kp F &kp C &kp SPC>
-                ;
-        };
-
-        uc_ue_upper: uc_ue_upper {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <0>;
-            wait-ms = <0>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp N0 &kp N0 &kp D &kp C &kp SPC>
-                ;
-        };
-
-        uc_ss: uc_ss {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <0>;
-            wait-ms = <0>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp N0 &kp N0 &kp D &kp F &kp SPC>
-                ;
-        };
-    };
-
     keymap {
         de_layer {
             display-name = "DE";
             bindings = <
-                &trans  &uc_ae_upper  &trans  &trans  &trans  &trans      &trans  &uc_ue_lower  &trans  &uc_oe_lower  &trans  &trans
-                &trans  &uc_ae_lower  &uc_ss  &trans  &trans  &trans      &trans  &uc_ue_upper  &trans  &uc_oe_upper  &trans  &trans
-                &trans  &trans        &trans  &trans  &trans  &trans      &trans  &trans        &trans  &trans        &trans  &trans
-                                      &trans  &trans  &trans                      &trans        &trans  &trans
+                &trans  &trans          &trans  &trans  &trans  &trans      &trans  &DE_UMLAUT_U  &trans  &DE_UMLAUT_O  &trans  &trans
+                &trans  &DE_UMLAUT_A    &DE_SZ  &trans  &trans  &trans      &trans  &trans        &trans  &trans        &trans  &trans
+                &trans  &trans          &trans  &trans  &trans  &trans      &trans  &trans        &trans  &trans        &trans  &trans
+                                                &trans  &trans  &trans      &trans  &trans        &trans
             >;
         };
     };
