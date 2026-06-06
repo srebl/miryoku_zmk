@@ -1,7 +1,7 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
-#include <dt-bindings/zmk/keys_de.h>
+#include "../miryoku/keys_de.h"
 #include "../miryoku/custom_config.h"
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
@@ -11,10 +11,10 @@
         de_layer {
             display-name = "DE";
             bindings = <
-                &trans  &trans          &trans  &trans  &trans  &trans      &trans  &DE_UMLAUT_U  &trans  &DE_UMLAUT_O  &trans  &trans
-                &trans  &DE_UMLAUT_A    &DE_SZ  &trans  &trans  &trans      &trans  &trans        &trans  &trans        &trans  &trans
-                &trans  &trans          &trans  &trans  &trans  &trans      &trans  &trans        &trans  &trans        &trans  &trans
-                                                &trans  &trans  &trans      &trans  &trans        &trans
+                &trans  &trans          &trans      &trans  &trans  &trans      &trans  &kp DE_U_UMLAUT &trans  &kp E_O_UMLAUT  &trans  &trans
+                &trans  &kp DE_A_UMLAUT &kp DE_SS   &trans  &trans  &trans      &trans  &trans          &trans  &trans          &trans  &trans
+                &trans  &trans          &trans      &trans  &trans  &trans      &trans  &trans          &trans  &trans          &trans  &trans
+                                                    &trans  &trans  &trans      &trans  &trans          &trans
             >;
         };
     };
